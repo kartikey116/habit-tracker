@@ -1,0 +1,135 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(2,37,78,1) 0%, rgba(4,56,126,1) 19.7%, rgba(85,245,221,1) 100.2%);
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 11px;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #fff;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 80%;
+}
+
+#task-container {
+    flex: 1;  /* Occupy the left side */
+    background-color: #ffffffcc;
+    border-radius: 12px;
+    padding: 30px;
+    backdrop-filter: blur(10px); /* Adding a blur effect for the background */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+#chart-container {
+    flex: 1;  /* Occupy the right side */
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    color: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:hover {
+    background-color: #e7e7e7;
+    transform: scale(1.05);
+}
+
+li.completed {
+    background-color: #d3ffd3;
+    text-decoration: line-through;
+    color: gray;
+}
+
+.timestamp {
+    font-size: 0.9rem;
+    color: gray;
+    margin-left: 15px;
+}
+
+input[type="text"] {
+    width: calc(100% - 120px);
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    margin-right: 10px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #66ccff;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: white;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Gradient animation for the background */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

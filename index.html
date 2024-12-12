@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-content">
+                <h1 id="welcome-text">Welcome, <span id="username-display">User</span></h1>
+            </div>
+        </nav>
+    </header>
+
+    <div id="main_container">
+        <main>
+            <h2>Enter your name to start tracking your goals:</h2>
+            <input type="text" id="username-input" placeholder="Enter your name">
+            <center>
+            <button id="start-button">Start</button></center>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('start-button').addEventListener('click', () => {
+            const username = document.getElementById('username-input').value;
+            if (username) {
+                localStorage.setItem('username', username);
+                window.location.href = 'tracker.html';
+            }
+        });
+
+        // Check if username is already saved
+        if (localStorage.getItem('username')) {
+            document.getElementById('welcome-text').innerHTML = `Welcome, <span id="username-display">${localStorage.getItem('username')}</span>`;
+        }
+    </script>
+</body>
+</html>
